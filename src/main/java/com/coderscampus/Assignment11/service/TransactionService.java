@@ -5,21 +5,27 @@ import com.coderscampus.Assignment11.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TransactionService {
 
-    private Long transactionId = 0L;
 
     @Autowired
     private TransactionRepository transactionRepo;
 
-    public Transaction findById(Long transactionId) {
-        return transactionRepo.findById(transactionId);
+
+    public List<Transaction> findAllByDate() {
+        List<Transaction> transactions = transactionRepo.findAll();
+        transactions.sort(Comparator.comparing(Transaction::getDate));
+        return transactions;
     }
 
-    public List<Transaction> findAll() {
-        return transactionRepo.findAll();
+    public Transaction findById(Long transactionId) {
+        Optional<Transaction> idFound =
+                transactionRepo.findAll().stream().filter(t -> t.getId().equals(transactionId)).findAny();
+        return idFound.orElse(null);
     }
 }
