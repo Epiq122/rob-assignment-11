@@ -18,6 +18,11 @@ public class TransactionRepository {
         populateData();
     }
 
+
+    public Transaction findById(Long transactionId) {
+        return transactions.get(Math.toIntExact(transactionId));
+    }
+
     public List<Transaction> findAll() {
         return transactions;
     }
