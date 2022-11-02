@@ -17,7 +17,7 @@ public class TransactionService {
     private TransactionRepository transactionRepo;
 
 
-    public List<Transaction> findAllByDate() {
+    public List<Transaction> findAll() {
         List<Transaction> transactions = transactionRepo.findAll();
         transactions.sort(Comparator.comparing(Transaction::getDate));
         return transactions;
@@ -28,4 +28,6 @@ public class TransactionService {
                 transactionRepo.findAll().stream().filter(t -> t.getId().equals(transactionId)).findAny();
         return idFound.orElse(null);
     }
+
+
 }

@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class Transaction implements Serializable {
-    private static final long serialVersionUID = 5489045104890844953L;
+    private static final long serialVersionUID = 9176873029745254542L;
 
     private Long id;
     private String retailer;
