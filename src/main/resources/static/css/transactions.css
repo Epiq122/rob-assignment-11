@@ -14,3 +14,12 @@ table th {
     color: white;
     background-color: black;
 }
+
+h2 {
+    color: red;
+}
+
+p {
+    font-weight: bold;
+    font-size: 22px;
+}

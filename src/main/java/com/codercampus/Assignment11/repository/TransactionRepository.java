@@ -1,6 +1,6 @@
-package com.coderscampus.Assignment11.repository;
+package com.codercampus.Assignment11.repository;
 
-import com.coderscampus.Assignment11.domain.Transaction;
+import com.codercampus.Assignment11.domain.Transaction;
 import org.springframework.stereotype.Repository;
 
 import java.io.FileInputStream;

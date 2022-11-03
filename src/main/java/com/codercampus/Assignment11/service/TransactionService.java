@@ -1,7 +1,7 @@
-package com.coderscampus.Assignment11.service;
+package com.codercampus.Assignment11.service;
 
-import com.coderscampus.Assignment11.domain.Transaction;
-import com.coderscampus.Assignment11.repository.TransactionRepository;
+import com.codercampus.Assignment11.domain.Transaction;
+import com.codercampus.Assignment11.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +18,9 @@ public class TransactionService {
 
 
     public List<Transaction> findAll() {
-        List<Transaction> transactions = transactionRepo.findAll();
-        transactions.sort(Comparator.comparing(Transaction::getDate));
-        return transactions;
+        List<Transaction> txns = transactionRepo.findAll();
+        txns.sort(Comparator.comparing(Transaction::getDate));
+        return txns;
     }
 
     public Transaction findById(Long transactionId) {

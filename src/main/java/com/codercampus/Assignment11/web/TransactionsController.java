@@ -1,8 +1,8 @@
-package com.coderscampus.Assignment11.web;
+package com.codercampus.Assignment11.web;
 
 
-import com.coderscampus.Assignment11.domain.Transaction;
-import com.coderscampus.Assignment11.service.TransactionService;
+import com.codercampus.Assignment11.domain.Transaction;
+import com.codercampus.Assignment11.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -25,10 +25,10 @@ public class TransactionsController {
 
     }
 
-    @GetMapping("/transactions/{transactionId}")
-    public String viewTransaction(ModelMap model, @PathVariable Long transactionId) {
-        Transaction transaction = transactionService.findById(transactionId);
-        model.put("transaction", transaction);
+    @GetMapping("/transactions/{txnId}")
+    public String viewTransaction(ModelMap model, @PathVariable Long txnId) {
+        Transaction txn = transactionService.findById(txnId);
+        model.put("transaction", txn);
 
         return "transaction";
     }

@@ -1,11 +1,11 @@
-package com.coderscampus.Assignment11.domain;
+package com.codercampus.Assignment11.domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class Transaction implements Serializable {
-    private static final long serialVersionUID = 9176873029745254542L;
+    private static final long serialVersionUID = 5489045104890844953L;
 
     private Long id;
     private String retailer;
